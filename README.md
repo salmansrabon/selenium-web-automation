@@ -7,11 +7,13 @@
 - Language: Java
 
 ## Requirement:
-1. Register a customer account with unique email
-2. Login to customer account
-3. Search for an item by typing 'dress' on search box
-4. Add to cart
-5. Checkout item
+1. Navigate to an ecommerce site
+2. Register a customer account with unique email
+3. Login to customer account
+4. Search for an item by typing 'dress' on search box
+5. Add to cart
+6. Checkout item
+7. Assert with completion message
 
 ## Prerequisite:
 1. Need to install jdk 1.8
