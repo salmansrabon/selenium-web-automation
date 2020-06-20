@@ -1,0 +1,8 @@
+<suite thread-count="1" verbose="1" name="E-commerce portal automation">
+
+    <test name="E-commerce portal automation">
+        <classes>
+            <class name="TestCase.TestCase"/>
+        </classes>
+    </test>
+</suite>
