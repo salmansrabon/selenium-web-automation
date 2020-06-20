@@ -13,7 +13,7 @@
 4. Search for an item by typing 'dress' on search box
 5. Add to cart
 6. Checkout item
-7. Assert with completion message
+7. Assert with purchase confirmation message
 
 ## Prerequisite:
 1. Need to install jdk 1.8
