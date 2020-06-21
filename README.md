@@ -26,6 +26,8 @@
 ```sh
 gradle clean test
 ```
-3. Selenium will open the browser and start automation.
+3. Selenium will open the browser and start automation.'
+
+![se](https://user-images.githubusercontent.com/48891202/85229120-d89b8e80-b409-11ea-8c9d-9db9e98047e6.jpg)
 
 You will find the automation <a href="https://youtu.be/VzlgCcbHZWU" target="_blank">video</a> here.
