@@ -1,0 +1,56 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "E-commerce portal automation",
+    "children" : [ {
+      "name" : "E-commerce portal automation",
+      "children" : [ {
+        "name" : "TestCase.TestCase",
+        "children" : [ {
+          "name" : "User Registration",
+          "uid" : "363758ac07c696e2",
+          "parentUid" : "0e63ed72e750d0f6edef1ce924628877",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592764143797,
+            "stop" : 1592764201635,
+            "duration" : 57838
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Login",
+          "uid" : "fe566bbd537b6568",
+          "parentUid" : "0e63ed72e750d0f6edef1ce924628877",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592764201716,
+            "stop" : 1592764218619,
+            "duration" : 16903
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "Purchase Item",
+          "uid" : "2bac140a1156cb8c",
+          "parentUid" : "0e63ed72e750d0f6edef1ce924628877",
+          "status" : "passed",
+          "time" : {
+            "start" : 1592764218625,
+            "stop" : 1592764261846,
+            "duration" : 43221
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "0e63ed72e750d0f6edef1ce924628877"
+      } ],
+      "uid" : "b540ed56a7e719b98c82699ab674def8"
+    } ],
+    "uid" : "61ecb9fc8236d0baf1d087ff409597e0"
+  } ]
+}

@@ -1,0 +1,31 @@
+[ {
+  "uid" : "fe566bbd537b6568",
+  "name" : "Login",
+  "time" : {
+    "start" : 1592764201716,
+    "stop" : 1592764218619,
+    "duration" : 16903
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "363758ac07c696e2",
+  "name" : "User Registration",
+  "time" : {
+    "start" : 1592764143797,
+    "stop" : 1592764201635,
+    "duration" : 57838
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2bac140a1156cb8c",
+  "name" : "Purchase Item",
+  "time" : {
+    "start" : 1592764218625,
+    "stop" : 1592764261846,
+    "duration" : 43221
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
