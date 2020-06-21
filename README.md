@@ -26,8 +26,14 @@
 ```sh
 gradle clean test
 ```
-3. Selenium will open the browser and start automation.'
-
-![se](https://user-images.githubusercontent.com/48891202/85229120-d89b8e80-b409-11ea-8c9d-9db9e98047e6.jpg)
+3. Selenium will open the browser and start automation.
+4. To view report, type this command:
+```sh
+allure generate allure-results --clean -o allure-report
+allure serve allure-results
+```
+## Report View
+![alluresult](https://user-images.githubusercontent.com/48891202/85232576-b6ae0600-b421-11ea-8a5e-913df13d30cd.png)
+![allureresult2](https://user-images.githubusercontent.com/48891202/85232626-245a3200-b422-11ea-90f1-de4c649f3534.png)
 
 You will find the automation <a href="https://youtu.be/VzlgCcbHZWU" target="_blank">video</a> here.
