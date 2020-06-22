@@ -5,6 +5,7 @@
 - IDE: IntelIJ
 - Build tool: Gradle
 - Language: Java
+- Framework: TestNG
 
 
 ## Requirement:
