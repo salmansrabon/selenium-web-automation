@@ -6,6 +6,7 @@
 - Build tool: Gradle
 - Language: Java
 
+
 ## Requirement:
 1. Navigate to an ecommerce site
 2. Register a customer account with unique email
