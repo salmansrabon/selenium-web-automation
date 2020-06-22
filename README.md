@@ -1,4 +1,4 @@
-# selenium-web-automation
+# selenium-web-automation-gradle
 
 ## Technology:
 - Tool: selenium
