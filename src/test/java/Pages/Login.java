@@ -1,5 +1,6 @@
 package Pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,6 +16,8 @@ public class Login {
     WebElement txtPassword;
     @FindBy(id="SubmitLogin")
     WebElement btnSubmitLogin;
+    @FindBy(xpath = "//span[contains(text(),'Test User')]")
+    WebElement lblUserName;
     public Login(WebDriver driver)
     {
         this.driver = driver;
@@ -27,5 +30,8 @@ public class Login {
         txtPassword.sendKeys(password);
         Thread.sleep(1000);
         btnSubmitLogin.click();
+        Thread.sleep(1000);
+        Assert.assertEquals(lblUserName.getText(),"Test User");
+
     }
 }

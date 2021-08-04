@@ -1,6 +1,7 @@
 package Pages;
 
-import Utils.util;
+import Utility.Utils;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
+
+import java.io.FileWriter;
 
 public class SignUp {
     WebDriver driver;
@@ -62,6 +65,7 @@ public class SignUp {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+    Utils util=new Utils(driver);
     public void memberSignUp() throws Exception {
         linkLogin.click();
         Assert.assertEquals(lblPageHeading.getText(),"AUTHENTICATION");
@@ -71,6 +75,14 @@ public class SignUp {
         util.writeFile(email.toString());
         Thread.sleep(1000);
         btnCreate.click();
+        JSONObject obj = new JSONObject();
+        obj.put("email", email);
+        obj.put("password", "P@ssword123");
+        FileWriter file = new FileWriter("./src/test/resources/users.json");
+        file.write(obj.toJSONString());
+        file.flush();
+        System.out.print(obj);
+
         Assert.assertEquals(lblPageSubheading.getText(),"CREATE AN ACCOUNT");
         Thread.sleep(5000);
         rbGender.click();
@@ -95,7 +107,7 @@ public class SignUp {
         btnSubmit.click();
         Thread.sleep(1000);
         Assert.assertEquals(lblPageHeading.getText(),"MY ACCOUNT");
-        util.takeSnapShot(driver);
+
         Thread.sleep(5000);
         Reporter.log("Signup successful");
         linkLogout.click();
