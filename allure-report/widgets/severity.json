@@ -1,30 +1,60 @@
 [ {
-  "uid" : "fe566bbd537b6568",
-  "name" : "Login",
+  "uid" : "5dc049faeef3027d",
+  "name" : "Purchase product",
   "time" : {
-    "start" : 1592764201716,
-    "stop" : 1592764218619,
-    "duration" : 16903
+    "start" : 1631729890510,
+    "stop" : 1631729945808,
+    "duration" : 55298
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "363758ac07c696e2",
-  "name" : "User Registration",
+  "uid" : "bc3f3d056e08e224",
+  "name" : "Login with valid email and password",
   "time" : {
-    "start" : 1592764143797,
-    "stop" : 1592764201635,
-    "duration" : 57838
+    "start" : 1631729831972,
+    "stop" : 1631729846779,
+    "duration" : 14807
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "2bac140a1156cb8c",
-  "name" : "Purchase Item",
+  "uid" : "ef7926dc92cf97aa",
+  "name" : "Signup successful",
   "time" : {
-    "start" : 1592764218625,
-    "stop" : 1592764261846,
-    "duration" : 43221
+    "start" : 1631729804630,
+    "stop" : 1631729829933,
+    "duration" : 25303
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "70ce55b06ed9e462",
+  "name" : "Search products",
+  "time" : {
+    "start" : 1631729884007,
+    "stop" : 1631729890505,
+    "duration" : 6498
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8d88b229ccf7f1ba",
+  "name" : "Login with invalid email",
+  "time" : {
+    "start" : 1631729846784,
+    "stop" : 1631729853684,
+    "duration" : 6900
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "439a745d61a541ff",
+  "name" : "Login with wrong password",
+  "time" : {
+    "start" : 1631729853687,
+    "stop" : 1631729860942,
+    "duration" : 7255
   },
   "status" : "passed",
   "severity" : "normal"

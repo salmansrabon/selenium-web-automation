@@ -18,20 +18,37 @@ public class Login {
     WebElement btnSubmitLogin;
     @FindBy(xpath = "//span[contains(text(),'Test User')]")
     WebElement lblUserName;
+    @FindBy(xpath = "//li[contains(text(),'Authentication failed.')]")
+    WebElement lblAuthError;
+    @FindBy(xpath = "//li[contains(text(),'Invalid email address.')]")
+    WebElement lblInvalidEmail;
     public Login(WebDriver driver)
     {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    public void doLogin(String email,String password) throws InterruptedException {
+    public String doLogin(String email,String password) throws InterruptedException {
         linkLogin.click();
-        Thread.sleep(1000);
         txtEmail.sendKeys(email);
         txtPassword.sendKeys(password);
-        Thread.sleep(1000);
         btnSubmitLogin.click();
-        Thread.sleep(1000);
-        Assert.assertEquals(lblUserName.getText(),"Test User");
+        return lblUserName.getText();
+
+    }
+    public String doLoginForWrongPassword(String email,String password) throws InterruptedException {
+        linkLogin.click();
+        txtEmail.sendKeys(email);
+        txtPassword.sendKeys(password);
+        btnSubmitLogin.click();
+        return lblAuthError.getText();
+
+    }
+    public String doLoginForInvalidEmail(String email,String password) throws InterruptedException {
+        linkLogin.click();
+        txtEmail.sendKeys(email);
+        txtPassword.sendKeys(password);
+        btnSubmitLogin.click();
+        return lblInvalidEmail.getText();
 
     }
 }
