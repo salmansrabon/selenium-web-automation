@@ -1,20 +1,27 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+
+import java.util.List;
 
 public class PurchaseItem {
     WebDriver driver;
+    WebDriverWait wait;
     @FindBy(id = "search_query_top")
     WebElement txtSearch;
     @FindBy(name = "submit_search")
     WebElement btnSearch;
     @FindBy(className = "product-container")
-    WebElement imgItem;
+    List<WebElement> imgItem;
+    @FindBy(xpath = "//span[@class='heading-counter']")
+    WebElement lblProductFound;
     @FindBy(name = "Submit")
     WebElement btnSubmit;
     @FindBy(xpath = "//span[contains(text(),'Proceed to checkout')]")
@@ -33,26 +40,42 @@ public class PurchaseItem {
     WebElement btnConfirm;
     @FindBy(xpath = "//strong[contains(text(),'Your order on My Store is complete.')]")
     WebElement lblConfirmation;
-
-
+    @FindBy(xpath = "//span[contains(text(),'Order history and details')]")
+    WebElement btnOrderHistory;
 
     public PurchaseItem(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+    public boolean checkHasCart(){
+        wait=new WebDriverWait(driver,30);
+        boolean status=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#header > div:nth-child(3) > div > div > div:nth-child(3) > div"))).isDisplayed();
+        return status;
+    }
+    public String orderHistory(){
+        btnOrderHistory.click();
+        wait=new WebDriverWait(driver,30);
+        String headerText=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h1[contains(text(),'Order history')]"))).getText();
+        return headerText;
 
-    public void purchaseItem() throws InterruptedException {
+    }
+    public String checkSearch() throws InterruptedException {
         txtSearch.sendKeys("Dress");
         Thread.sleep(2000);
         btnSearch.click();
-        imgItem.click();
+        Thread.sleep(1000);
+        return lblProductFound.getText();
+
+    }
+    public String purchaseItem() throws InterruptedException {
+        imgItem.get(1).click();
         Thread.sleep(1000);
         btnSubmit.click();
-        Thread.sleep(3000);
+        //Thread.sleep(7000);
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Proceed to checkout')]")));
         btnSubmit2.click();
-        Thread.sleep(1000);
         btnSubmit3.click();
-        Thread.sleep(1000);
         btnSubmit4.click();
         Thread.sleep(1000);
         chkBox1.click();
@@ -62,7 +85,7 @@ public class PurchaseItem {
         Thread.sleep(1000);
         btnConfirm.click();
         Thread.sleep(2000);
-        Assert.assertEquals(lblConfirmation.getText(),"Your order on My Store is complete.");
-
+        String successMessage=lblConfirmation.getText();
+        return successMessage;
     }
 }
