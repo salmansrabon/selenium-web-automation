@@ -35,7 +35,8 @@ allure generate allure-results --clean -o allure-report
 allure serve allure-results
 ```
 ## Report View
-![alluresult](https://user-images.githubusercontent.com/48891202/85232576-b6ae0600-b421-11ea-8a5e-913df13d30cd.png)
-![allureresult2](https://user-images.githubusercontent.com/48891202/85232626-245a3200-b422-11ea-90f1-de4c649f3534.png)
+
+![2021-09-20_23-58-01](https://user-images.githubusercontent.com/48891202/134051081-3f7040bb-7853-46ff-bbea-10e082b15869.png)
+![2021-09-20_23-58-22](https://user-images.githubusercontent.com/48891202/134051088-c1f3ec56-3472-482f-8557-ae23698006a5.png)
 
 You will find the automation <a href="https://youtu.be/VzlgCcbHZWU" target="_blank">video</a> here.
