@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+import java.time.Duration;
 import java.util.List;
 
 public class PurchaseItem {
@@ -48,13 +49,13 @@ public class PurchaseItem {
         PageFactory.initElements(driver, this);
     }
     public boolean checkHasCart(){
-        wait=new WebDriverWait(driver,30);
+        wait=new WebDriverWait(driver,Duration.ofSeconds(30));
         boolean status=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#header > div:nth-child(3) > div > div > div:nth-child(3) > div"))).isDisplayed();
         return status;
     }
     public String orderHistory(){
         btnOrderHistory.click();
-        wait=new WebDriverWait(driver,30);
+        wait=new WebDriverWait(driver,Duration.ofSeconds(30));
         String headerText=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h1[contains(text(),'Order history')]"))).getText();
         return headerText;
 
@@ -72,7 +73,7 @@ public class PurchaseItem {
         Thread.sleep(1000);
         btnSubmit.click();
         //Thread.sleep(7000);
-        WebDriverWait wait = new WebDriverWait(driver,30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Proceed to checkout')]")));
         btnSubmit2.click();
         btnSubmit3.click();
