@@ -8,18 +8,19 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Setup {
     public WebDriver driver;
     @BeforeTest(groups = {"login","purchase_product"})
     public void setUp() throws IOException {
+        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
         ChromeOptions ops = new ChromeOptions();
         ops.addArguments("--headed");
-        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
         driver = new ChromeDriver(ops);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @AfterMethod  //AfterMethod annotation - This method executes after every test execution
     public void screenShot(ITestResult result) throws IOException {
