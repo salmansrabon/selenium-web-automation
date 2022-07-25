@@ -20,7 +20,7 @@ public class Setup {
         ops.addArguments("--headed");
         driver = new ChromeDriver(ops);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
     @AfterMethod  //AfterMethod annotation - This method executes after every test execution
     public void screenShot(ITestResult result) throws IOException {
